@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>万年历查询系统</title>
+</head>
+<body>
+	<script type="text/javascript">
+	wanNL();
+		function wanNL(){
+			var y=prompt("您好，欢迎使用万年历查询系统！\n\n请输入1900年后的年份：",2017);
+			var year=parseInt(y-0);
+			if(!isNaN(year)&&year>=1900&&year==parseFloat(y-0)){
+				var m=prompt("请输入月份：",12);
+				var month=parseInt(m-0);
+				if(!isNaN(month)&&month>=1&&month
+				<=12&&month==parseFloat(m-0)){
+					var prin="日\t一\t二\t三\t四\t五\t六\n";
+					var tianshu=0;
+						year--;
+					while(year>=1900){
+					if(year%4==0&&year%100!=0||year%400==0){
+						tianshu+=366;
+						year--;
+					}
+					else{
+						tianshu+=365;
+						year--;
+					} 
+				}
+					switch(month){
+						case 12:tianshu+=30;
+						case 11:tianshu+=31;
+						case 10:tianshu+=30;
+						case 9:tianshu+=31;
+						case 8:tianshu+=31;
+						case 7:tianshu+=30;
+						case 6:tianshu+=31;
+						case 5:tianshu+=30;
+						case 4:tianshu+=31;
+						case 3:if(parseInt(y)%4==0&&parseInt(y)%100!=0||parseInt(y)%400==0){
+						tianshu+=29;
+						}
+						else{
+							tianshu+=28;
+						};
+						case 2:tianshu+=31;
+						case 1:break;
+					}
+					var a=(tianshu%7+1)%7;
+					var day=0;
+					switch(month){
+						case 1:;
+						case 3:;
+						case 5:;
+						case 7:;
+						case 8:;
+						case 10:;
+						case 12:day=31;break;
+						case 4:;
+						case 6:;
+						case 9:;
+						case 11:day=30;break;
+						case 2:
+						if(parseInt(y)%4==0&&parseInt(y)%100!=0||parseInt(y)%400==0){
+						day=29;
+						}
+						else{
+						day=28;
+						} break;
+					}
+					 var i=day+a;
+					 var j=1,k=1;
+					while(j<=i){
+						if(a>0){
+							prin+="\t";
+							a--;
+							j++;
+						}
+						else{
+							if(j%7!=0)
+								{
+								prin+=k+"\t";
+								k++;
+							}
+							else{
+								prin=prin+k+"\n";
+								k++;
+							}
+							j++;
+						}
+
+					}
+				console.log(parseInt(y)+"年"+parseInt(m)+"月\n"+prin);
+			}
+				else if(m==null);
+				else{
+					alert("对不起，输入月份有误，请重新输入");
+					wanNL();
+				}
+			}
+			else if(y==null);
+			else{
+				alert("对不起，输入年份有误，请重新输入");
+				wanNL();
+			}
+		}
+	</script>
+</body>
+</html>

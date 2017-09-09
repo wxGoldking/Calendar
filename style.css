@@ -1,0 +1,132 @@
+*{
+			padding:0;
+			margin:0;
+		}
+		div.wrap{
+			position: relative;
+			width: 1366px;
+			height: 648px;
+			overflow: hidden;
+			text-align: center;
+			margin: 0 auto;
+		}
+		div.content{
+			position: absolute;
+			width: 700px;
+			height: 648px;
+			color:#000;
+			text-align: center;
+			left:50%;
+			top:0;
+			margin-left:-200px;
+		}
+		div.riqi{
+
+			height: 20px;
+			line-height: 20px;
+			margin: 0 auto;
+
+		}
+		h1{
+			text-align: center;
+			margin: 25px auto;
+		}
+		h1 span{
+			font-size: 14px;
+
+		}
+		ul{
+			position: relative;
+			width: 1366px;
+			height: 648px;
+			overflow: hidden;
+		}
+		li{
+			position: absolute;
+			width: 1366px;
+			height: 648px;
+			overflow: hidden;
+			left:0;
+			bottom:0;
+			opacity:0;
+			
+		}
+		li.xian{
+			opacity:1;
+		}	
+		li.current{
+			opacity:1;
+			transition:opacity 1.5s;
+		}
+		li.hidd{
+			opacity:0;
+			transition:opacity 1.5s;
+		}
+		li.chun{
+			background: url(spring.png) no-repeat 0 -50px;
+		}
+		li.xia{
+			background: url(summer.png) no-repeat 0 -50px;
+		}
+		li.qiu{
+			background: url(autumn.png) no-repeat 0 -50px;
+		}
+		li.dong{
+			background: url(winter.png) no-repeat 0 -50px;
+		}
+
+		table{
+			margin:30px auto;
+			border-spacing:0;
+			border-top: 1px solid #333;
+			border-left: 1px solid #333;
+			border-radius: 10px 10px 0 0;
+			cursor:pointer;
+			background:url(timg.png);
+			box-shadow: 7px 7px 10px;
+		}
+		table tr th,table tr td {
+			border-right: 1px solid #333;
+			border-bottom: 1px solid #333;
+		}
+		td,th{
+			width: 50px;
+			height: 50px;
+			font-family: "微软雅黑";
+			line-height: 50px;
+			text-align: center;
+			font-weight: bold;
+		}
+		td{
+			height: 40px;
+			line-height: 40px;
+		}
+		th{
+			height: 40px;
+			line-height: 40px;
+			font-size: 18px;
+		}
+		th.left{
+			border-radius: 10px 0 0 0 ;
+		}
+		th.right{
+			border-radius: 0 10px 0 0 ;
+		}
+		th#lastt:hover,th#nextt:hover,th#title:hover{
+			color:#fff;
+			font-weight: bold;
+			background: #080;
+		}
+		td:hover{
+			background: #f00;
+			font-size: 20px;
+			color:#fff;
+		}
+		td.current{
+			background: #f00;
+			font-size: 20px;
+			color:#fff;
+		}
+		td.hui{
+			color:#666;
+		}
